@@ -2,84 +2,161 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Welcome</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StockGPT - Coming Soon</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      font-family: 'Inter', sans-serif;
     }
 
-    body {
-      height: 100vh;
-      background: linear-gradient(135deg, #667eea, #764ba2);
+    body, html {
+      height: 100%;
+      background: linear-gradient(135deg, #1e3c72, #2a5298);
+      color: #fff;
       display: flex;
-      align-items: center;
       justify-content: center;
-    }
-
-    .card {
-      background: white;
-      padding: 40px 50px;
-      border-radius: 12px;
+      align-items: center;
       text-align: center;
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-      animation: fadeIn 1.2s ease;
+      padding: 20px;
     }
 
-    .card h1 {
-      color: #333;
-      margin-bottom: 15px;
+    .container {
+      max-width: 600px;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.3);
     }
 
-    .card p {
-      color: #666;
-      margin-bottom: 25px;
-      font-size: 16px;
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      color: #ffd700;
+      letter-spacing: 1px;
     }
 
-    .card button {
-      padding: 12px 25px;
+    p {
+      font-size: 1.1rem;
+      margin-bottom: 30px;
+      line-height: 1.5;
+    }
+
+    .countdown {
+      display: flex;
+      justify-content: space-around;
+      margin-bottom: 30px;
+    }
+
+    .countdown div {
+      background: rgba(255, 255, 255, 0.2);
+      padding: 20px;
+      border-radius: 10px;
+      width: 80px;
+    }
+
+    .countdown div span {
+      display: block;
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-bottom: 5px;
+    }
+
+    .subscribe input {
+      padding: 12px 15px;
+      width: 70%;
       border: none;
-      border-radius: 25px;
-      background: #667eea;
-      color: white;
-      font-size: 16px;
+      border-radius: 5px 0 0 5px;
+      outline: none;
+    }
+
+    .subscribe button {
+      padding: 12px 20px;
+      border: none;
+      background-color: #ffd700;
+      color: #000;
+      font-weight: 600;
       cursor: pointer;
-      transition: background 0.3s, transform 0.3s;
+      border-radius: 0 5px 5px 0;
+      transition: 0.3s;
     }
 
-    .card button:hover {
-      background: #5a67d8;
-      transform: translateY(-3px);
+    .subscribe button:hover {
+      background-color: #ffbf00;
     }
 
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
+    @media(max-width: 500px) {
+      .countdown {
+        flex-direction: column;
+        gap: 15px;
       }
-      to {
-        opacity: 1;
-        transform: translateY(0);
+
+      .countdown div {
+        width: 100%;
+      }
+
+      .subscribe input {
+        width: 100%;
+        border-radius: 5px 5px 0 0;
+      }
+
+      .subscribe button {
+        width: 100%;
+        border-radius: 0 0 5px 5px;
       }
     }
   </style>
 </head>
 <body>
+  <div class="container">
+    <h1>JP Associate's StockGPT Coming Soon</h1>
+    <p>JP Associate, Rajkot is launching an innovative stock AI platform. Stay tuned!</p>
+    
+    <div class="countdown">
+      <div>
+        <span id="days">00</span>Days
+      </div>
+      <div>
+        <span id="hours">00</span>Hours
+      </div>
+      <div>
+        <span id="minutes">00</span>Minutes
+      </div>
+      <div>
+        <span id="seconds">00</span>Seconds
+      </div>
+    </div>
 
-  <div class="card">
-    <h1>Welcome ✨</h1>
-    <p>We’re glad to have you here. Enjoy your journey!</p>
-    <button onclick="showMessage()">Get Started</button>
+    <div class="subscribe">
+      <input type="email" placeholder="Enter your email to get updates">
+      <button>Notify Me</button>
+    </div>
   </div>
 
   <script>
-    function showMessage() {
-      alert("Welcome! Have a great day 🌸");
-    }
-  </script>
+    // Countdown timer
+    const launchDate = new Date("2026-02-01T00:00:00").getTime();
 
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const distance = launchDate - now;
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      document.getElementById("days").innerText = days.toString().padStart(2, '0');
+      document.getElementById("hours").innerText = hours.toString().padStart(2, '0');
+      document.getElementById("minutes").innerText = minutes.toString().padStart(2, '0');
+      document.getElementById("seconds").innerText = seconds.toString().padStart(2, '0');
+    }
+
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+  </script>
 </body>
 </html>
