@@ -3,160 +3,154 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="StockGPT by JP Associate Rajkot - Innovative AI-powered stock platform coming soon. Contact: jpassociatesrjk@gmail.com">
+  <meta name="keywords" content="StockGPT, Stock AI, JP Associate, Rajkot, Stocks, Investing, Finance">
+  <meta name="author" content="JP Associate Rajkot">
   <title>StockGPT - Coming Soon</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: 'Inter', sans-serif;
+      font-family: 'Montserrat', sans-serif;
     }
 
     body, html {
       height: 100%;
-      background: linear-gradient(135deg, #1e3c72, #2a5298);
-      color: #fff;
+      background: #000; /* black background */
+      color: #FFD700; /* golden text */
       display: flex;
       justify-content: center;
       align-items: center;
       text-align: center;
+      overflow: hidden;
       padding: 20px;
     }
 
     .container {
-      max-width: 600px;
-      background: rgba(0, 0, 0, 0.5);
-      padding: 40px;
-      border-radius: 15px;
-      box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+      max-width: 700px;
+      background: rgba(30, 30, 30, 0.9);
+      padding: 60px 40px;
+      border-radius: 25px;
+     
+      position: relative;
+      overflow: hidden;
+      animation: fadeIn 2s ease forwards;
     }
 
     h1 {
-      font-size: 2.5rem;
-      margin-bottom: 20px;
-      color: #ffd700;
-      letter-spacing: 1px;
+      font-size: 4rem;
+      font-weight: 700;
+      color: #FFD700;
+      
+      margin-bottom: 15px;
+      letter-spacing: 2px;
+      animation: slideInDown 1.5s ease forwards;
+    }
+
+    h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 30px;
+     
+      animation: slideInUp 1.8s ease forwards;
     }
 
     p {
-      font-size: 1.1rem;
-      margin-bottom: 30px;
-      line-height: 1.5;
+      font-size: 1.2rem;
+      color: #ddd;
+      line-height: 1.6;
+      margin-bottom: 40px;
+      animation: fadeIn 2s ease forwards;
     }
 
-    .countdown {
-      display: flex;
-      justify-content: space-around;
-      margin-bottom: 30px;
-    }
-
-    .countdown div {
-      background: rgba(255, 255, 255, 0.2);
-      padding: 20px;
-      border-radius: 10px;
-      width: 80px;
-    }
-
-    .countdown div span {
-      display: block;
-      font-size: 1.8rem;
+    a.contact {
+      display: inline-block;
+      font-size: 1.2rem;
       font-weight: 700;
-      margin-bottom: 5px;
+      color: #FFD700;
+      text-decoration: none;
+      border: 2px solid #FFD700;
+      padding: 15px 35px;
+      border-radius: 12px;
+      transition: all 0.3s ease;
+      animation: fadeIn 2.2s ease forwards;
     }
 
-    .subscribe input {
-      padding: 12px 15px;
-      width: 70%;
-      border: none;
-      border-radius: 5px 0 0 5px;
-      outline: none;
-    }
-
-    .subscribe button {
-      padding: 12px 20px;
-      border: none;
-      background-color: #ffd700;
+    a.contact:hover {
+      background: #FFD700;
       color: #000;
-      font-weight: 600;
-      cursor: pointer;
-      border-radius: 0 5px 5px 0;
-      transition: 0.3s;
+      box-shadow: 0 0 20px #FFD700;
     }
 
-    .subscribe button:hover {
-      background-color: #ffbf00;
+    /* Floating particle effects */
+    .particle {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background: rgba(255, 215, 0, 0.3);
+      border-radius: 50%;
+      animation: float 6s infinite;
     }
 
-    @media(max-width: 500px) {
-      .countdown {
-        flex-direction: column;
-        gap: 15px;
-      }
+    @keyframes float {
+      0% {transform: translateY(0) translateX(0);}
+      50% {transform: translateY(-200px) translateX(50px);}
+      100% {transform: translateY(0) translateX(0);}
+    }
 
-      .countdown div {
-        width: 100%;
-      }
+    @keyframes fadeIn {
+      0% {opacity: 0;}
+      100% {opacity: 1;}
+    }
 
-      .subscribe input {
-        width: 100%;
-        border-radius: 5px 5px 0 0;
-      }
+    @keyframes slideInDown {
+      0% {opacity:0; transform: translateY(-50px);}
+      100% {opacity:1; transform: translateY(0);}
+    }
 
-      .subscribe button {
-        width: 100%;
-        border-radius: 0 0 5px 5px;
-      }
+    @keyframes slideInUp {
+      0% {opacity:0; transform: translateY(50px);}
+      100% {opacity:1; transform: translateY(0);}
+    }
+
+    @media(max-width: 600px) {
+      h1 {font-size: 3rem;}
+      h2 {font-size: 1.5rem;}
+      p {font-size: 1rem;}
+      a.contact {padding: 12px 25px; font-size: 1rem;}
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>JP Associate's StockGPT Coming Soon</h1>
-    <p>JP Associate, Rajkot is launching an innovative stock AI platform. Stay tuned!</p>
-    
-    <div class="countdown">
-      <div>
-        <span id="days">00</span>Days
-      </div>
-      <div>
-        <span id="hours">00</span>Hours
-      </div>
-      <div>
-        <span id="minutes">00</span>Minutes
-      </div>
-      <div>
-        <span id="seconds">00</span>Seconds
-      </div>
-    </div>
 
-    <div class="subscribe">
-      <input type="email" placeholder="Enter your email to get updates">
-      <button>Notify Me</button>
-    </div>
+  <div class="container">
+    <h1>StockGPT</h1>
+    <h2>JP Associate, Rajkot</h2>
+    <p>We are launching an innovative AI-powered stock platform. Stay tuned for premium features, insights, and updates for investors and enthusiasts!</p>
+    <a class="contact" href="mailto:jpassociatesrjk@gmail.com">Contact Us</a>
   </div>
 
+  <!-- Golden particles -->
   <script>
-    // Countdown timer
-    const launchDate = new Date("2026-02-01T00:00:00").getTime();
-
-    function updateCountdown() {
-      const now = new Date().getTime();
-      const distance = launchDate - now;
-
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-      document.getElementById("days").innerText = days.toString().padStart(2, '0');
-      document.getElementById("hours").innerText = hours.toString().padStart(2, '0');
-      document.getElementById("minutes").innerText = minutes.toString().padStart(2, '0');
-      document.getElementById("seconds").innerText = seconds.toString().padStart(2, '0');
+    const numParticles = 40;
+    for(let i = 0; i < numParticles; i++){
+      const particle = document.createElement('div');
+      particle.classList.add('particle');
+      particle.style.width = `${Math.random()*8 + 3}px`;
+      particle.style.height = particle.style.width;
+      particle.style.left = `${Math.random()*100}%`;
+      particle.style.top = `${Math.random()*100}%`;
+      particle.style.animationDuration = `${Math.random()*6 + 4}s`;
+      particle.style.opacity = Math.random() * 0.5 + 0.3;
+      document.body.appendChild(particle);
     }
-
-    setInterval(updateCountdown, 1000);
-    updateCountdown();
   </script>
+
 </body>
 </html>
